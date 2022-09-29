@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class Tree {
@@ -116,6 +117,21 @@ public class Tree {
                 node = st.pop();
                 System.out.println(node.value);
                 node = node.rightChild;
+            }
+        }
+    }
+
+    public void passWidth() {
+        LinkedList<TreeNode> queue = new LinkedList<>(); // Очередь
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode temp = queue.removeFirst();
+            System.out.println(temp.value);
+            if (temp.leftChild != null) {
+                queue.addLast(temp.leftChild);
+            }
+            if (temp.rightChild != null) {
+                queue.addLast(temp.rightChild);
             }
         }
     }
