@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tel-Ran</title>
+</head>
+<body>
+	<script src="js/qsort.js"></script>
+    <script>
+		// Изучение метода "разделяй и властвуй"
+		function sum(arr, index) {
+			if (index === arr.length - 1) {
+				return arr[index];
+			}
+			return arr[index] + sum(arr, index + 1);
+		}
+		document.write(sum([1, 2, 3], 0) + '<br>');
+		// Тестирование быстрой сортировки
+		let array = [39, 22, 2, 55, 6, 20];
+		document.write(array + '<br>');
+		qsort(array, 0, 5);
+		document.write(array + '<br>');
+    </script>
+</body>
+</html>
